@@ -10,6 +10,5 @@ urlpatterns = [
 from rest_framework import routers
 router = routers.SimpleRouter()
 router.register(r'recipe', views.RecipeViewset, basename='recipe'),
-# router.register(r'recipe_list', views.RecipeListViewset, basename='recipe_list'),
 
 urlpatterns += router.urls
