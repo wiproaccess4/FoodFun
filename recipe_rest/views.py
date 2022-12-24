@@ -80,6 +80,7 @@ class RecipeViewset(viewsets.ViewSet):
 
     @action(methods=["GET", "POST"], detail=False)
     def recipe(self, request):
+        """Get all the recipes"""
         if request.method == "GET":
             recipes = list(Recipe.objects.filter(id=request.data.get("id")).values("id", "recipe_name", "ingredients"))
             return Response(recipes)
